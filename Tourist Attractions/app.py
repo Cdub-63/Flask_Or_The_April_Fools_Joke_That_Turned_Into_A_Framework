@@ -42,4 +42,4 @@ def add_location():
 def index():
 
   ## Redirect to locations route function
-  return redirect(usr_for("locations", category="recommended", _external=True,_scheme="https"))
+  return redirect(url_for("locations", category="recommended", _external=True,_scheme="https"))
