@@ -17,7 +17,6 @@ def locations(category):
   ## Check the request for form data and process
   if request.method == "POST":
     [(name, action)] = request.form.items()
-
     if action == UP_ACTION:
       visit.moveup(name)
     elif action == DEL_ACTION:
@@ -29,14 +28,17 @@ def locations(category):
 def add_location():
   ## Validate and collect the form data
   add_form = AddLocationForm()
-  if add_form.validate_on_submit():
+  category = add_form.category.data
+  #if add_form.validate_on_submit():
+  if True:
       name = add_form.name.data
       description = add_form.description.data
       category = add_form.category.data
       visit.add(name, description, category)
 
+  #visit.add("testing if statement", "test", "recommended")
   ## Redirect to locations route function
-  return redirect(url_for("locations", category=category, _external=True, _scheme="https"))
+  return redirect(url_for('locations', category=category, _external=True, _scheme='https'))
 
 @app.route("/")
 def index():
