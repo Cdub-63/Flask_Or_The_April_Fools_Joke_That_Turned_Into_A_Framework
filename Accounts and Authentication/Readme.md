@@ -1,4 +1,4 @@
-# Accounts with Flask
+# Accounts with Flask - Dinner Party
 
 Accounts are the end result of gathering data necessary to create a user for a website. They also allow you to keep logging in to use the application.
 
